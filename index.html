@@ -1,10 +1,49 @@
 ---
-layout: default
+layout: home
 ---
 
-<div class="cover text-center">
-  <h1>Broken? Guaranteed to Leave Changed.</h1>
-  <a class="btn btn-success" style="margin-top: 10px" href="/contact">Schedule Your Free Appointment</a>
+<div class="carousel-wrapper">
+  <div id="home-carousel" class="carousel slide">
+    <ol class="carousel-indicators">
+      {% for carousel in site.carousel %}
+        {% assign index = forloop.index - 1 %}
+        {% if forloop.index == 1 %}
+          <li data-target="#home-carousel" data-slide-to="0" class="active"></li>
+        {% else %}
+          <li data-target="#home-carousel" data-slide-to="{{ index }}"></li>
+        {% endif %}
+      {% endfor %}
+    </ol>
+
+    <!-- Wrapper for Slides -->
+    <div class="carousel-inner">
+      {% for carousel in site.carousel %}
+        {% if forloop.index == 1 %}
+          <div class="item active">
+            <div class="fill" style="background-image:url('{{ carousel.image_url }}');"></div>
+            <div class="carousel-content">
+              {{ carousel.content }}
+            </div>
+          </div>
+        {% else %}
+        <div class="item">
+          <div class="fill" style="background-image:url('{{ carousel.image_url }}');"></div>
+          <div class="carousel-content">
+            {{ carousel.content }}
+          </div>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <a class="left carousel-control" href="#home-carousel" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#home-carousel" data-slide="next">
+    <span class="icon-next"></span>
+  </a>
+
 </div>
 
 <div id="about-us-section">
@@ -12,32 +51,21 @@ layout: default
     <h1 style="text-align:center">What We Believe</h1>
     <h2>Vision</h2>
     <p style="padding: 0 25px;">
-      In Mark 16:15-18 we are given a mandate to go into all the world to preach,
-      baptize, and heal the sick. The Clearwater Healing House is one of the ways
-      the Holy Spirit is leading us to fulfill this great commission. To preach this
-      great salvation, is to minister total healing to the body, soul, and spirit.
-      The Clearwater Healing House is a body ministry in which the whole church in
-      this city can come together in unity of vision and see there community, city,
-      and nation healed. Our vision is to minister full salvation–the forgiveness
-      of sins and the relieving of pain and suffering in order that the name of
-      Jesus may be made famous in our city, in our day and in our time.
-      Jesus still heals!
+      In Mark 16:15-18 we are given a mandate to go into all the world to preach, baptize, and heal the sick. The Clearwater Healing House is one of the ways the Holy Spirit is leading us to fulfill this great commission. To preach this great salvation, is
+      to minister total healing to the body, soul, and spirit. The Clearwater Healing House is a body ministry in which the whole church in this city can come together in unity of vision and see there community, city, and nation healed. Our vision is
+      to minister full salvation–the forgiveness of sins and the relieving of pain and suffering in order that the name of Jesus may be made famous in our city, in our day and in our time. Jesus still heals!
     </p>
 
     <h2>What We Believe</h2>
     <ol>
       <li>
-        We believe in the deity of the Lord Jesus Christ, His virgin birth, and
-        His atoning work on the cross; the shed blood of Jesus for our sins as well
-        as our sicknesses and diseases. (Mathew 8:17; Hebrews 13:8)
+        We believe in the deity of the Lord Jesus Christ, His virgin birth, and His atoning work on the cross; the shed blood of Jesus for our sins as well as our sicknesses and diseases. (Mathew 8:17; Hebrews 13:8)
       </li>
       <li>
         We believe the Bible is the inspired Word of God.
       </li>
       <li>
-        We believe in the Baptism of the Holy Spirit and the gifts of the Spirit
-        which allow the believer to be empowered to complete the ‘greater works’
-        that Jesus promised us. (John 14:12)
+        We believe in the Baptism of the Holy Spirit and the gifts of the Spirit which allow the believer to be empowered to complete the ‘greater works’ that Jesus promised us. (John 14:12)
       </li>
     </ol>
   </div>

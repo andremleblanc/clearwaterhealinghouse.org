@@ -1,10 +1,21 @@
+---
 title: Clearwater Healing House
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://clearwaterhealinghouse.org"
-
-# Build settings
+baseurl: ''
+url: http://clearwaterhealinghouse.org
 markdown: kramdown
 theme: aegean
+
 exclude:
-  - Gemfile
-  - Gemfile.lock
+- Gemfile
+- Gemfile.lock
+
+collections:
+  carousel:
+    caption: My Caption
+
+# defaults:
+#   -
+#     scope:
+#       path:
+#     values:
+#       caption: 
